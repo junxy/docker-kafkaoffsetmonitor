@@ -1,0 +1,16 @@
+version: "2"
+
+services:
+  kafkaoffsetmonitor:
+    image: junxy/kafkaoffsetmonitor
+    # build: .
+    container_name: kafkaoffsetmonitor
+    # restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      ZK_HOSTS: "localhost:2181"
+      KAFKA_BROKERS: "localhost:9092"
+    # volumes:
+    #   - ./data:/kafkaoffsetmonitor/data:Z
+
